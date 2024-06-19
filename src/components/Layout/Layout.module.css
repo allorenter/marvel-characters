@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-header);
+  height: 84px;
+  padding: var(--space-0) var(--space-8);
+}
+
+.nav-ul {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-li {
+  list-style: none;
+}
