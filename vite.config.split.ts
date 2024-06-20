@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-// https://vitejs.dev/config/
+// configuración para generar la bulild con code splitting (lazy load)
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: {
@@ -14,10 +14,7 @@ export default defineConfig({
     setupFiles: ['./src/tests/setup.ts'],
   },
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: () => 'build.js',
-      },
-    },
+    minify: true,
+    cssMinify: true,
   },
 });
