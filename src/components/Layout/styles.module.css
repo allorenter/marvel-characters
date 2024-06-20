@@ -18,3 +18,7 @@
 .main {
   padding: var(--space-8);
 }
+
+.navigationSpinner {
+  text-align: center;
+}
