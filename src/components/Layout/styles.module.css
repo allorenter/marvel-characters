@@ -14,3 +14,7 @@
 .nav-li {
   list-style: none;
 }
+
+.main {
+  padding: var(--space-8);
+}

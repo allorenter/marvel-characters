@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import styles from './Layout.module.css';
+import styles from './styles.module.css';
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
@@ -13,7 +13,7 @@ export default function Layout({ children }: PropsWithChildren) {
           </ul>
         </nav>
       </header>
-      <main>{children}</main>
+      <main className={styles['main']}>{children}</main>
     </div>
   );
 }
