@@ -21,12 +21,18 @@ export default function CharactersList() {
     setSearchQuery(value);
   };
 
+  const resultsLabel = characters?.length === 1 ? ' RESULT' : ' RESULTS';
+
   return (
     <Layout>
       <InputSearch value={searchQuery} onChange={onChange} />
       <ApiRequestStateHandler isLoading={isLoadingCharacters} error={errorCharacters}>
         {Array.isArray(characters) ? (
           <>
+            <div>
+              {characters.length}
+              {resultsLabel}
+            </div>
             <div className={styles['container']}>
               {characters.map((character) => (
                 <CharacterItem

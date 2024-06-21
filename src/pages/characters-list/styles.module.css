@@ -1,4 +1,6 @@
 .container {
+  margin-top: var(--space-7);
+
   --grid-layout-gap: var(--space-4);
   --grid-column-count: 7;
   --grid-item--min-width: 190px;
