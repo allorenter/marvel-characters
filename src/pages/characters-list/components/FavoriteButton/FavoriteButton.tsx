@@ -5,9 +5,11 @@ import styles from './styles.module.css';
 export default function FavoriteButton({
   isFavorite,
   character,
+  onHover,
 }: {
   isFavorite: boolean;
   character: Character;
+  onHover: (hovered: boolean) => void;
 }) {
   const { mutate } = useToggleFavoriteCharacter();
 
@@ -17,7 +19,12 @@ export default function FavoriteButton({
 
   return (
     <div className={styles['favoriteButtonContainer']}>
-      <button onClick={onClick} className={styles['favoriteButton']}>
+      <button
+        onMouseEnter={() => onHover(true)}
+        onMouseLeave={() => onHover(false)}
+        onClick={onClick}
+        className={styles['favoriteButton']}
+      >
         fav
       </button>
     </div>

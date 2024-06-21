@@ -2,9 +2,18 @@
   display: flex;
   justify-content: flex-end;
   padding-right: var(--space-2);
+  height: 0;
 }
 
 .favoriteButton {
   position: relative;
-  top: -38px;
+  top: -52px;
+  background: inherit;
+  border: 0;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.character:hover .favoriteButton {
+  background-position: top;
 }
