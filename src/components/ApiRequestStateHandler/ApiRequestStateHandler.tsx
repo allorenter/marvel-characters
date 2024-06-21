@@ -13,18 +13,18 @@ export default function ApiRequestStateHandler({
   onErrorRender?: (error: Error) => ReactNode;
   onIsLoadingRender?: () => ReactNode;
 }>) {
-  if (error !== null && error !== undefined) {
-    if (typeof onErrorRender === 'function') {
-      return <>{onErrorRender(error)}</>;
-    }
-    return <>ERROR</>;
-  }
-
   if (isLoading) {
     if (typeof onIsLoadingRender === 'function') {
       return <>{onIsLoadingRender()}</>;
     }
     return <DefaultLoading />;
+  }
+
+  if (error !== null && error !== undefined) {
+    if (typeof onErrorRender === 'function') {
+      return <>{onErrorRender(error)}</>;
+    }
+    return <>ERROR</>;
   }
 
   return children;

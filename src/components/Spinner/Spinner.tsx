@@ -1,9 +1,9 @@
 import styles from './styles.module.css';
 
-export default function Spinner() {
+export default function Spinner({ width, height }: { width?: number; height?: number }) {
   return (
     <div>
-      <span className={styles['spinner']}></span>
+      <span style={{ width, height }} className={styles['spinner']}></span>
     </div>
   );
 }
