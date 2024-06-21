@@ -28,5 +28,6 @@
 }
 
 .heartIconHovered {
+  transition: ease-in-out 300ms;
   fill: var(--color-white);
 }
