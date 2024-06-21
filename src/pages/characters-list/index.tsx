@@ -1,5 +1,3 @@
-import { Layout } from '../../components/Layout';
+import CharactersList from './CharactersList';
 
-export default function CharactersList() {
-  return <Layout>Characters list</Layout>;
-}
+export { CharactersList };

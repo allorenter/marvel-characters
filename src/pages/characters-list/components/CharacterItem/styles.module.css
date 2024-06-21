@@ -1,0 +1,22 @@
+.character {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  aspect-ratio: 1 / 1;
+}
+
+.info {
+  border-top: 5.4px solid var(--color-red);
+  background: var(--color-black);
+  color: var(--color-white);
+  height: 56px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%);
+}
+
+.fav {
+}

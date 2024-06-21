@@ -4,8 +4,8 @@ const router = createBrowserRouter([
   {
     path: '/',
     async lazy() {
-      const Component = await import('@/pages/characters-list');
-      return { Component: Component.default };
+      const module = await import('@/pages/characters-list');
+      return { Component: module.CharactersList };
     },
   },
   {

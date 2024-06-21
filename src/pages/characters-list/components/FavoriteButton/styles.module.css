@@ -1,0 +1,10 @@
+.favoriteButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: var(--space-2);
+}
+
+.favoriteButton {
+  position: relative;
+  top: -38px;
+}
