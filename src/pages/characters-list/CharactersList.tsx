@@ -23,10 +23,10 @@ export default function CharactersList() {
 
   return (
     <Layout>
+      <InputSearch value={searchQuery} onChange={onChange} />
       <ApiRequestStateHandler isLoading={isLoadingCharacters} error={errorCharacters}>
         {Array.isArray(characters) ? (
           <>
-            <InputSearch value={searchQuery} onChange={onChange} />
             <div className={styles['container']}>
               {characters.map((character) => (
                 <CharacterItem
