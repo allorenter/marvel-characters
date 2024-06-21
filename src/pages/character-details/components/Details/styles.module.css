@@ -1,0 +1,31 @@
+.container {
+  border-top: 1px solid var(--color-dark-gray);
+  background: var(--color-bg-header);
+  color: var(--color-text-header);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  justify-content: center;
+
+  img {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+.info {
+  max-width: 640px;
+
+  h1 {
+    font-family: 'RobotoCondensedBold';
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  h6 {
+    font-family: 'RobotoCondensedRegular';
+    font-size: 16px;
+    line-height: 18.75px;
+    font-weight: normal;
+  }
+}

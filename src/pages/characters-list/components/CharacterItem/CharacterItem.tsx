@@ -21,9 +21,11 @@ export default function CharacterItem({
     setHovered(false);
   };
 
+  const to = `character-details/${character.id}`;
+
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      <Link to={'character-details'}>
+      <Link to={to}>
         <div className={`${styles['character']} ${hovered ? styles['hovered'] : ''}`}>
           <img className={styles['image']} src={character.thumbnail} alt={character.name} />
           <div className={styles['info']}>

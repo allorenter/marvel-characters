@@ -1,5 +1,3 @@
-import { Layout } from '../../components/Layout';
+import CharactersDetails from './CharacterDetails';
 
-export default function CharactersDetails() {
-  return <Layout>Character details</Layout>;
-}
+export { CharactersDetails };

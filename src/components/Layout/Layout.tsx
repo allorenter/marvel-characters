@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import styles from './styles.module.css';
-import { useNavigation } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
 import { FavoritesLength } from '../FavoritesLength';
 
 export default function Layout({ children }: PropsWithChildren) {
@@ -12,7 +12,9 @@ export default function Layout({ children }: PropsWithChildren) {
         <nav className={styles['nav']}>
           <ul>
             <li>
-              <img src='logo.svg' alt='Marvel' />
+              <Link to={'/'}>
+                <img src='/logo.svg' alt='Marvel' />
+              </Link>
             </li>
             <li>
               <FavoritesLength />

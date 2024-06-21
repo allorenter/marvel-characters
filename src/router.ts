@@ -9,10 +9,10 @@ const router = createBrowserRouter([
     },
   },
   {
-    path: '/character-details',
+    path: '/character-details/:id',
     async lazy() {
       const Component = await import('@/pages/character-details');
-      return { Component: Component.default };
+      return { Component: Component.CharactersDetails };
     },
   },
   {

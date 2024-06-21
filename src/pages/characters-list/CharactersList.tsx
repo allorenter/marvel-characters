@@ -25,28 +25,30 @@ export default function CharactersList() {
 
   return (
     <Layout>
-      <InputSearch value={searchQuery} onChange={onChange} />
-      <ApiRequestStateHandler isLoading={isLoadingCharacters} error={errorCharacters}>
-        {Array.isArray(characters) ? (
-          <>
-            <div>
-              {characters.length}
-              {resultsLabel}
-            </div>
-            <div className={styles['container']}>
-              {characters.map((character) => (
-                <CharacterItem
-                  key={character.id}
-                  character={character}
-                  isFavorite={isFavorite(character.id)}
-                />
-              ))}
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
-      </ApiRequestStateHandler>
+      <div className={styles['routeContainer']}>
+        <InputSearch value={searchQuery} onChange={onChange} />
+        <ApiRequestStateHandler isLoading={isLoadingCharacters} error={errorCharacters}>
+          {Array.isArray(characters) ? (
+            <>
+              <div>
+                {characters.length}
+                {resultsLabel}
+              </div>
+              <div className={styles['container']}>
+                {characters.map((character) => (
+                  <CharacterItem
+                    key={character.id}
+                    character={character}
+                    isFavorite={isFavorite(character.id)}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+        </ApiRequestStateHandler>
+      </div>
     </Layout>
   );
 }

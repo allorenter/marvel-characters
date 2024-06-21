@@ -1,3 +1,7 @@
+.routeContainer {
+  padding: var(--space-8);
+}
+
 .container {
   margin-top: var(--space-7);
 

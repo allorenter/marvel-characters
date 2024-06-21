@@ -21,11 +21,11 @@
       display: flex;
       list-style: none;
     }
-  }
-}
 
-.main {
-  padding: var(--space-8);
+    a {
+      display: flex;
+    }
+  }
 }
 
 .navigationSpinner {
