@@ -1,15 +1,16 @@
 import { Character } from '@/types/character';
 import useToggleFavoriteCharacter from '../../../../hooks/useToggleFavoriteCharacter';
 import styles from './styles.module.css';
+import HeartIcon from './HeartIcon';
 
 export default function FavoriteButton({
   isFavorite,
   character,
-  onHover,
+  hovered,
 }: {
   isFavorite: boolean;
   character: Character;
-  onHover: (hovered: boolean) => void;
+  hovered: boolean;
 }) {
   const { mutate } = useToggleFavoriteCharacter();
 
@@ -19,13 +20,8 @@ export default function FavoriteButton({
 
   return (
     <div className={styles['favoriteButtonContainer']}>
-      <button
-        onMouseEnter={() => onHover(true)}
-        onMouseLeave={() => onHover(false)}
-        onClick={onClick}
-        className={styles['favoriteButton']}
-      >
-        fav
+      <button onClick={onClick} className={styles['favoriteButton']}>
+        <HeartIcon isFavorite={isFavorite} hovered={hovered} />
       </button>
     </div>
   );

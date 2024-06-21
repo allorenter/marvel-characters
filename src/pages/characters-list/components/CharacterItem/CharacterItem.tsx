@@ -11,14 +11,20 @@ export default function CharacterItem({
   character: Character;
   isFavorite: boolean;
 }) {
-  const [favoriteButtonIsHovered, setFavoriteButtonIsHovered] = useState(false);
+  const [hovered, setHovered] = useState(false);
+
+  const onMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const onMouseLeave = () => {
+    setHovered(false);
+  };
 
   return (
-    <div>
+    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <Link to={'character-details'}>
-        <div
-          className={`${styles['character']} ${favoriteButtonIsHovered ? styles['hovered'] : ''}`}
-        >
+        <div className={`${styles['character']} ${hovered ? styles['hovered'] : ''}`}>
           <img className={styles['image']} src={character.thumbnail} alt={character.name} />
           <div className={styles['info']}>
             <div className={styles['name']}>{character.name}</div>
@@ -26,11 +32,7 @@ export default function CharacterItem({
           </div>
         </div>
       </Link>
-      <FavoriteButton
-        isFavorite={isFavorite}
-        character={character}
-        onHover={setFavoriteButtonIsHovered}
-      />
+      <FavoriteButton isFavorite={isFavorite} character={character} hovered={hovered} />
     </div>
   );
 }

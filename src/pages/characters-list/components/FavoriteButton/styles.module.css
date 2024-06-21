@@ -7,13 +7,26 @@
 
 .favoriteButton {
   position: relative;
-  top: -52px;
+  top: -56px;
   background: inherit;
   border: 0;
   color: var(--color-white);
   cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 16px;
+  }
 }
 
-.character:hover .favoriteButton {
-  background-position: top;
+.heartIcon {
+  transition: ease-in-out 300ms;
+  fill: var(--color-red);
+}
+
+.heartIconHovered {
+  fill: var(--color-white);
 }
