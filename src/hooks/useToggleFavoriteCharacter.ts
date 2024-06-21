@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-import { Character } from '../pages/characters-list/types/character';
+import { Character } from '@/types/character';
 import toggleFavoriteCharacter from '@/services/toggleFavoriteCharacter';
 import { useContext } from 'react';
 import FavoritesCharactersContext from '@/contexts/FavoritesCharactersContext';
