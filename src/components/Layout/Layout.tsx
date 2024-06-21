@@ -10,11 +10,11 @@ export default function Layout({ children }: PropsWithChildren) {
     <div>
       <header className={styles['header']}>
         <nav className={styles['nav']}>
-          <ul className={styles['nav-ul']}>
-            <li className={styles['nav-li']}>
+          <ul>
+            <li>
               <img src='logo.svg' alt='Marvel' />
             </li>
-            <li className={styles['nav-li']}>
+            <li>
               <FavoritesLength />
             </li>
           </ul>
