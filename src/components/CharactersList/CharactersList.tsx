@@ -19,7 +19,7 @@ export default function CharactersList({
         {charactersWithIsFavorite.length}
         {resultsLabel}
       </div>
-      <div className={styles['container']}>
+      <div className={styles.container}>
         {charactersWithIsFavorite.map((character) => (
           <CharacterItem
             key={character.id}

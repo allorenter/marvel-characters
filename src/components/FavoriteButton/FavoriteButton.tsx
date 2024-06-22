@@ -24,7 +24,7 @@ export default function FavoriteButton({
 
   return (
     <div className={`${styles['favoriteButtonContainer']} ${className || ''}`}>
-      <button onClick={onClick} className={styles['favoriteButton']} aria-label={ariaLabel}>
+      <button onClick={onClick} className={styles.favoriteButton} aria-label={ariaLabel}>
         <HeartIcon isFavorite={isFavorite} hovered={hovered} />
       </button>
     </div>

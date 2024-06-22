@@ -26,11 +26,11 @@ export default function CharacterItem({
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <Link to={to}>
-        <div className={`${styles['character']} ${hovered ? styles['hovered'] : ''}`}>
-          <img className={styles['image']} src={character.thumbnail} alt={'Character image'} />
-          <div className={styles['info']}>
-            <div className={styles['name']}>{character.name}</div>
-            <div className={styles['fav']}>{}</div>
+        <div className={`${styles.character} ${hovered ? styles.hovered : ''}`}>
+          <img className={styles.image} src={character.thumbnail} alt={'Character image'} />
+          <div className={styles.info}>
+            <div className={styles.name}>{character.name}</div>
+            <div className={styles.fav}>{}</div>
           </div>
         </div>
       </Link>

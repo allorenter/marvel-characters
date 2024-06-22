@@ -27,13 +27,13 @@
     font-size: 40px;
     text-transform: uppercase;
   }
+}
 
-  h6 {
-    font-family: 'RobotoCondensedRegular';
-    font-size: 16px;
-    line-height: 18.75px;
-    font-weight: normal;
-  }
+.description {
+  font-family: 'RobotoCondensedRegular';
+  font-size: 16px;
+  line-height: 18.75px;
+  font-weight: normal;
 }
 
 .favoriteButton {

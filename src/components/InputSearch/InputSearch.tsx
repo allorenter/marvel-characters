@@ -13,7 +13,7 @@ export default function InputSearch({
     <>
       <SearchIcon />
       <Input
-        className={styles['input']}
+        className={styles.input}
         value={value}
         onChange={onChange}
         type={'search'}

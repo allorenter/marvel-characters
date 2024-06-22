@@ -19,11 +19,11 @@ function Modal({
   }, []);
 
   return (
-    <div className={styles['modalContainer']}>
-      <div className={styles['modal']}>
-        <div className={styles['modalHeader']}>
+    <div className={styles.modalContainer}>
+      <div className={styles.modal}>
+        <div className={styles.modalHeader}>
           {headerText}
-          <button className={styles['modalCloseButton']} onClick={onClose}>
+          <button className={styles.modalCloseButton} onClick={onClose}>
             X
           </button>
         </div>

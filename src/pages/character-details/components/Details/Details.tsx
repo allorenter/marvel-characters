@@ -7,20 +7,20 @@ export default function Details({ detailedCharacter }: { detailedCharacter: Deta
   const isFavorite = useIsFavoriteCharacter();
 
   return (
-    <div className={styles['container']}>
-      <div className={styles['content']}>
+    <div className={styles.container}>
+      <div className={styles.content}>
         <img src={detailedCharacter.thumbnail} alt={detailedCharacter.name} />
-        <div className={styles['info']}>
+        <div className={styles.info}>
           <h1>
             {detailedCharacter.name}
             <FavoriteButton
               character={detailedCharacter}
               hovered={false}
               isFavorite={isFavorite(detailedCharacter.id)}
-              className={styles['favoriteButton']}
+              className={styles.favoriteButton}
             />
           </h1>
-          <h6>{detailedCharacter.description}</h6>
+          <p className={styles.description}>{detailedCharacter.description}</p>
         </div>
       </div>
     </div>

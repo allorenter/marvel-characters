@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 export default function SearchIcon() {
   return (
     <svg
-      className={styles['searchIcon']}
+      className={styles.searchIcon}
       width='13'
       height='13'
       viewBox='0 0 13 13'

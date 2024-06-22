@@ -23,7 +23,7 @@ export default function FavoritesLength() {
       error={errorFavoriteCharacters}
       onIsLoadingRender={() => <Spinner width={20} height={20} />}
     >
-      <Link to={'/favorites'} aria-label='Number of favorites' className={styles['link']}>
+      <Link to={'/favorites'} aria-label='Number of favorites' className={styles.link}>
         <svg
           width='24'
           height='22'
@@ -32,7 +32,7 @@ export default function FavoritesLength() {
           xmlns='http://www.w3.org/2000/svg'
         >
           <path
-            className={styles['heart']}
+            className={styles.heart}
             fillRule='evenodd'
             clipRule='evenodd'
             d='M12 3.63869L6 -0.00292969L0 3.63869V11.4422L12 21.6734L24 11.4422V3.63869L18 -0.00292969L12 3.63869Z'

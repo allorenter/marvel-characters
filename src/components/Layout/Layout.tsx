@@ -6,8 +6,8 @@ import { FavoritesLength } from '../FavoritesLength';
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <div>
-      <header className={styles['header']}>
-        <nav className={styles['nav']}>
+      <header className={styles.header}>
+        <nav className={styles.nav}>
           <ul>
             <li>
               <Link to={'/'}>
@@ -20,7 +20,7 @@ export default function Layout({ children }: PropsWithChildren) {
           </ul>
         </nav>
       </header>
-      <main className={styles['main']}>{children}</main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 }
