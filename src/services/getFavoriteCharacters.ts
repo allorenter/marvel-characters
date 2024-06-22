@@ -1,5 +1,5 @@
 import { LOCALSTORAGE_FAVORITES_CHARACTERS_KEY } from '@/constants';
-import { FavoriteCharacter } from '@/pages/characters-list';
+import { FavoriteCharacter } from '@/types/favorite-character';
 
 export default async function getFavoriteCharacters(): Promise<FavoriteCharacter[]> {
   return new Promise((resolve) => {
