@@ -18,8 +18,8 @@ const router = createBrowserRouter([
   {
     path: '/favorites',
     async lazy() {
-      const Component = await import('@/pages/favorites-list');
-      return { Component: Component.default };
+      const Component = await import('@/pages/favorites');
+      return { Component: Component.Favorites };
     },
   },
 ]);

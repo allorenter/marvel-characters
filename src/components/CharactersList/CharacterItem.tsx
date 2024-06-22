@@ -21,7 +21,7 @@ export default function CharacterItem({
     setHovered(false);
   };
 
-  const to = `character-details/${character.id}`;
+  const to = `/character-details/${character.id}`;
 
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>

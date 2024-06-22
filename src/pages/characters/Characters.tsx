@@ -2,7 +2,7 @@ import { ApiRequestStateHandler } from '@/components/ApiRequestStateHandler';
 import { Layout } from '../../components/Layout';
 import useCharacters from './hooks/useCharacters';
 import styles from './styles.module.css';
-import { InputSearch } from './components/InputSearch';
+import { InputSearch } from '../../components/InputSearch';
 import { useContext } from 'react';
 import FavoritesCharactersContext from '@/contexts/FavoritesCharactersContext';
 import { CharactersList } from '@/components/CharactersList';

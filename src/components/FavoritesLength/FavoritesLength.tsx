@@ -23,7 +23,7 @@ export default function FavoritesLength() {
       error={errorFavoriteCharacters}
       onIsLoadingRender={() => <Spinner width={20} height={20} />}
     >
-      <Link to={'favorites'} aria-label='Number of favorites' className={styles['link']}>
+      <Link to={'/favorites'} aria-label='Number of favorites' className={styles['link']}>
         <svg
           width='24'
           height='22'
