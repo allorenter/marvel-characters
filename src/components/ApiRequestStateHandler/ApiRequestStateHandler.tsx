@@ -1,5 +1,6 @@
 import { PropsWithChildren, ReactNode } from 'react';
 import { DefaultLoading } from './components/DefaultLoading';
+import { DefaultError } from './components/DefaultError';
 
 export default function ApiRequestStateHandler({
   children,
@@ -24,7 +25,7 @@ export default function ApiRequestStateHandler({
     if (typeof onErrorRender === 'function') {
       return <>{onErrorRender(error)}</>;
     }
-    return <>ERROR</>;
+    return <DefaultError />;
   }
 
   return children;
