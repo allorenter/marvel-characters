@@ -1,28 +1,20 @@
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { render, waitFor, screen, fireEvent } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useState } from 'react';
-import FavoritesCharactersContext from '@/contexts/FavoritesCharactersContext';
 import { Favorites } from '@/pages/favorites';
 import { Characters } from '@/pages/characters';
-
-const queryClient = new QueryClient();
+import RoutesWrapper from '@/tests/RoutesWrapper';
 
 const Wrapper = () => {
-  const [favoritesList, setFavoritesList] = useState([]);
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <FavoritesCharactersContext.Provider value={[favoritesList, setFavoritesList]}>
-        <MemoryRouter initialEntries={['']}>
-          <Routes>
-            <Route path={'/favorites'} element={<Favorites />} />
-            <Route path={''} element={<Characters />} />
-          </Routes>
-        </MemoryRouter>
-      </FavoritesCharactersContext.Provider>
-    </QueryClientProvider>
+    <RoutesWrapper>
+      <MemoryRouter initialEntries={['']}>
+        <Routes>
+          <Route path={'/favorites'} element={<Favorites />} />
+          <Route path={''} element={<Characters />} />
+        </Routes>
+      </MemoryRouter>
+    </RoutesWrapper>
   );
 };
 
