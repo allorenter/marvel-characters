@@ -14,7 +14,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
     "test": "vitest",
-    "start": "npx http-server ./build"
+    "start": "npx http-server ./dist"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.45.1",
