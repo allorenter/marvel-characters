@@ -18,9 +18,11 @@ export default function FavoriteButton({
     mutate({ isFavorite, character });
   };
 
+  const ariaLabel = isFavorite ? 'Remove from favorites' : 'Add to favorites';
+
   return (
     <div className={styles['favoriteButtonContainer']}>
-      <button onClick={onClick} className={styles['favoriteButton']}>
+      <button onClick={onClick} className={styles['favoriteButton']} aria-label={ariaLabel}>
         <HeartIcon isFavorite={isFavorite} hovered={hovered} />
       </button>
     </div>
