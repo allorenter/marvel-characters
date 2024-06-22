@@ -1,0 +1,11 @@
+.link {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--color-text-header);
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.heart {
+  fill: var(--color-red);
+}
