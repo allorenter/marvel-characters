@@ -3,8 +3,6 @@
   background: var(--color-bg-header);
   color: var(--color-text-header);
   display: flex;
-  align-items: center;
-  gap: var(--space-6);
   justify-content: center;
 
   img {
@@ -13,9 +11,15 @@
   }
 }
 
-.info {
-  max-width: 640px;
+.content {
+  max-width: var(--character-details-max-width);
+  width: var(--character-details-width);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
 
+.info {
   h1 {
     font-family: 'RobotoCondensedBold';
     font-size: 40px;

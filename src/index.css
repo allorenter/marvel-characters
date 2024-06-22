@@ -41,6 +41,7 @@
   --color-white: #fff;
   --color-gray: #aaaaaa;
   --color-dark-gray: #333333;
+  --color-medium-gray: #d9d9d9;
 
   --space-0: 0;
   --space-1: 6px;
@@ -53,6 +54,9 @@
   --space-8: 48px;
   --space-9: 54px;
   --space-10: 60px;
+
+  --character-details-max-width: 960px;
+  --character-details-width: 80%;
 }
 
 body {

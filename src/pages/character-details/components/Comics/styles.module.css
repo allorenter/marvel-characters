@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: var(--character-details-max-width);
+  width: var(--character-details-width);
+
+  h2 {
+    margin-top: var(--space-8);
+    font-size: 32px;
+    font-family: 'RobotoCondensedBold';
+    margin-bottom: var(--space-5);
+  }
+}
+
+.comicsList {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+
+.comicsList::-webkit-scrollbar {
+  height: 4px;
+}
+
+.comicsList::-webkit-scrollbar-track {
+  background: var(--color-medium-gray);
+}
+
+.comicsList::-webkit-scrollbar-thumb {
+  background-color: var(--color-red);
+}
+
+.comic {
+  width: 179px;
+
+  img {
+    width: 179px;
+    margin-bottom: var(--space-1);
+  }
+}
+
+.title {
+  margin-bottom: var(--space-1);
+  font-size: 16px;
+  line-height: 18.75px;
+  font-family: 'RobotoCondensedMedium';
+}
