@@ -1,13 +1,13 @@
 import { ApiRequestStateHandler } from '@/components/ApiRequestStateHandler';
 import { Layout } from '../../components/Layout';
-import { CharacterItem } from './components/CharacterItem';
 import useCharacters from './hooks/useCharacters';
 import styles from './styles.module.css';
 import { InputSearch } from './components/InputSearch';
 import { useContext } from 'react';
 import FavoritesCharactersContext from '@/contexts/FavoritesCharactersContext';
+import { CharactersList } from '@/components/CharactersList';
 
-export default function CharactersList() {
+export default function Characters() {
   const { searchQuery, setSearchQuery, characters, isLoadingCharacters, errorCharacters } =
     useCharacters();
   const [favorites] = useContext(FavoritesCharactersContext);
@@ -21,29 +21,17 @@ export default function CharactersList() {
     setSearchQuery(value);
   };
 
-  const resultsLabel = characters?.length === 1 ? ' RESULT' : ' RESULTS';
+  const charactersWithIsFavorite = Array.isArray(characters)
+    ? characters.map((character) => ({ ...character, isFavorite: isFavorite(character.id) }))
+    : [];
 
   return (
     <Layout>
       <div className={styles['routeContainer']}>
         <InputSearch value={searchQuery} onChange={onChange} />
         <ApiRequestStateHandler isLoading={isLoadingCharacters} error={errorCharacters}>
-          {Array.isArray(characters) ? (
-            <>
-              <div>
-                {characters.length}
-                {resultsLabel}
-              </div>
-              <div className={styles['container']}>
-                {characters.map((character) => (
-                  <CharacterItem
-                    key={character.id}
-                    character={character}
-                    isFavorite={isFavorite(character.id)}
-                  />
-                ))}
-              </div>
-            </>
+          {Array.isArray(charactersWithIsFavorite) ? (
+            <CharactersList charactersWithIsFavorite={charactersWithIsFavorite} />
           ) : (
             <></>
           )}

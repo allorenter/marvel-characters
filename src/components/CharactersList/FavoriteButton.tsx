@@ -1,5 +1,5 @@
 import { Character } from '@/types/character';
-import useToggleFavoriteCharacter from '../../../../hooks/useToggleFavoriteCharacter';
+import useToggleFavoriteCharacter from '@/hooks/useToggleFavoriteCharacter';
 import styles from './styles.module.css';
 import HeartIcon from './HeartIcon';
 

@@ -1,0 +1,91 @@
+.container {
+  margin-top: var(--space-7);
+
+  --grid-layout-gap: var(--space-4);
+  --grid-column-count: 7;
+  --grid-item--min-width: 190px;
+
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+  );
+  grid-gap: var(--grid-layout-gap);
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  aspect-ratio: 1 / 1;
+}
+
+.info {
+  border-top: 5.4px solid var(--color-red);
+  background: linear-gradient(
+    to bottom,
+    var(--color-red) 0%,
+    var(--color-red) 50%,
+    var(--color-black) 50%,
+    var(--color-black) 100%
+  );
+  background-size: 100% 200%;
+  background-position: bottom;
+  transition: background-position 300ms ease-in-out;
+  color: var(--color-white);
+  height: 68px;
+  padding-left: 16px;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 94% 100%, 0 100%);
+}
+
+.hovered .info {
+  background-position: top;
+}
+
+.name {
+  width: 75%;
+  text-transform: uppercase;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+  font-family: 'RobotoCondensedRegular';
+}
+
+.favoriteButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: var(--space-2);
+  height: 0;
+}
+
+.favoriteButton {
+  position: relative;
+  top: -56px;
+  background: inherit;
+  border: 0;
+  color: var(--color-white);
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 16px;
+  }
+}
+
+.heartIcon {
+  transition: ease-in-out 300ms;
+  fill: var(--color-red);
+}
+
+.heartIconHovered {
+  transition: ease-in-out 300ms;
+  fill: var(--color-white);
+}

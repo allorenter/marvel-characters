@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FavoriteButton } from '../FavoriteButton';
+import FavoriteButton from './FavoriteButton';
 import styles from './styles.module.css';
 import { Character } from '@/types/character';
 import { useState } from 'react';
