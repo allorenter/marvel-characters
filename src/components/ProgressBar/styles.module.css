@@ -1,0 +1,12 @@
+.progressContainer {
+  width: 100%;
+  background-color: var(--color-medium-gray);
+}
+
+.progressBar {
+  height: 5.4px;
+  width: 0;
+  background-color: var(--color-red);
+  text-align: center;
+  transition: width 0.5s ease-in-out;
+}

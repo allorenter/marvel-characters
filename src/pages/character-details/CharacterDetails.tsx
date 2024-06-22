@@ -4,6 +4,7 @@ import useDetailedCharacter from './hooks/useDetailedCharacter';
 import { ApiRequestStateHandler } from '@/components/ApiRequestStateHandler';
 import { Details } from './components/Details';
 import { Comics } from './components/Comics';
+import { ProgressBar } from '@/components/ProgressBar';
 
 export default function CharactersDetails() {
   const { id } = useParams();
@@ -15,7 +16,13 @@ export default function CharactersDetails() {
   // TODO: gestionar notfound errors
   return (
     <Layout>
-      <ApiRequestStateHandler isLoading={isLoadingDetailedCharacter} error={errorDetailedCharacter}>
+      <ApiRequestStateHandler
+        isLoading={isLoadingDetailedCharacter}
+        error={errorDetailedCharacter}
+        onIsLoadingRender={() => {
+          return <ProgressBar />;
+        }}
+      >
         {detailedCharacter ? (
           <>
             <Details detailedCharacter={detailedCharacter} />
