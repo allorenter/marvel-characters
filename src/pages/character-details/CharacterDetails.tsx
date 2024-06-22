@@ -24,10 +24,10 @@ export default function CharactersDetails() {
         }}
       >
         {detailedCharacter ? (
-          <>
+          <div className={'animatedRoute'}>
             <Details detailedCharacter={detailedCharacter} />
             {hasComics && <Comics comics={detailedCharacter.comics} />}
-          </>
+          </div>
         ) : (
           <>NOT FOUND</>
         )}

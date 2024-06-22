@@ -20,7 +20,7 @@ export default function Favorites() {
 
   return (
     <Layout>
-      <div className={styles['routeContainer']}>
+      <div className={`${styles['routeContainer']} animatedRoute`}>
         <h1>Favorites</h1>
         <InputSearch value={searchQuery} onChange={onChange} />
         <CharactersList charactersWithIsFavorite={charactersWithIsFavorite} />

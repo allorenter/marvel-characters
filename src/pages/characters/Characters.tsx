@@ -27,7 +27,7 @@ export default function Characters() {
 
   return (
     <Layout>
-      <div className={styles['routeContainer']}>
+      <div className={`${styles['routeContainer']} animatedRoute`}>
         <InputSearch value={searchQuery} onChange={onChange} />
         <ApiRequestStateHandler isLoading={isLoadingCharacters} error={errorCharacters}>
           {Array.isArray(charactersWithIsFavorite) ? (
