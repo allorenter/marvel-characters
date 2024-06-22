@@ -12,8 +12,6 @@ export default async function toggleFavoriteCharacter(isFavorite: boolean, chara
   const favoritesCharacters = await getFavoriteCharacters();
   return new Promise((resolve, reject) => {
     try {
-      console.log('service', isFavorite, character);
-
       if (!isFavorite && character.id) {
         setLocalStorageFavoritesCharacters([
           ...favoritesCharacters,

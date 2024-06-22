@@ -3,7 +3,6 @@ import { waitFor, renderHook } from '@testing-library/react';
 import useToggleFavoriteCharacter from './useToggleFavoriteCharacter';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LOCALSTORAGE_FAVORITES_CHARACTERS_KEY } from '@/constants';
-
 import FavoritesCharactersContext from '@/contexts/FavoritesCharactersContext';
 import { useEffect, useState } from 'react';
 import { FavoriteCharacter } from '@/types/favorite-character';
@@ -12,7 +11,6 @@ const queryClient = new QueryClient();
 
 const Wrapper = ({ children, setFavorites }) => {
   const [favoritesList, setFavoritesList] = useState([]);
-  console.log('favoritesList', favoritesList);
 
   useEffect(() => {
     if (typeof setFavorites === 'function') setFavorites(favoritesList);
