@@ -3,7 +3,7 @@
 
   --grid-layout-gap: var(--space-4);
   --grid-column-count: 7;
-  --grid-item--min-width: 190px;
+  --grid-item--min-width: 148px;
 
   --gap-count: calc(var(--grid-column-count) - 1);
   --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));

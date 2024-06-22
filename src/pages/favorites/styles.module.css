@@ -1,3 +1,9 @@
 .routeContainer {
   padding: var(--space-8);
 }
+
+@media (max-width: 768px) {
+  .routeContainer {
+    padding: var(--space-4);
+  }
+}
