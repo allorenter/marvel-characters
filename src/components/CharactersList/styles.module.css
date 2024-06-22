@@ -55,37 +55,3 @@
   margin-bottom: var(--space-3);
   font-family: 'RobotoCondensedRegular';
 }
-
-.favoriteButtonContainer {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: var(--space-2);
-  height: 0;
-}
-
-.favoriteButton {
-  position: relative;
-  top: -56px;
-  background: inherit;
-  border: 0;
-  color: var(--color-white);
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  svg {
-    width: 16px;
-  }
-}
-
-.heartIcon {
-  transition: ease-in-out 300ms;
-  fill: var(--color-red);
-}
-
-.heartIconHovered {
-  transition: ease-in-out 300ms;
-  fill: var(--color-white);
-}

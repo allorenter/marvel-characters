@@ -20,6 +20,8 @@
 }
 
 .info {
+  width: 100%;
+
   h1 {
     font-family: 'RobotoCondensedBold';
     font-size: 40px;
@@ -31,5 +33,15 @@
     font-size: 16px;
     line-height: 18.75px;
     font-weight: normal;
+  }
+}
+
+.favoriteButton {
+  position: relative;
+  top: 18px;
+
+  svg {
+    width: 24px;
+    height: 21px;
   }
 }

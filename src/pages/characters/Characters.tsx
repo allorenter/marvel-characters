@@ -3,18 +3,13 @@ import { Layout } from '../../components/Layout';
 import useCharacters from './hooks/useCharacters';
 import styles from './styles.module.css';
 import { InputSearch } from '../../components/InputSearch';
-import { useContext } from 'react';
-import FavoritesCharactersContext from '@/contexts/FavoritesCharactersContext';
 import { CharactersList } from '@/components/CharactersList';
+import useIsFavoriteCharacter from '@/hooks/useIsFavoriteCharacter';
 
 export default function Characters() {
   const { searchQuery, setSearchQuery, characters, isLoadingCharacters, errorCharacters } =
     useCharacters();
-  const [favorites] = useContext(FavoritesCharactersContext);
-
-  const isFavorite = (id: number) => {
-    return favorites.findIndex((fav) => fav.id === id) !== -1;
-  };
+  const isFavorite = useIsFavoriteCharacter();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
