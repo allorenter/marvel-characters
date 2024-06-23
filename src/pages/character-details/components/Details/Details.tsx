@@ -11,15 +11,15 @@ export default function Details({ detailedCharacter }: { detailedCharacter: Deta
       <div className={styles.content}>
         <img src={detailedCharacter.thumbnail} alt={detailedCharacter.name} />
         <div className={styles.info}>
-          <h1>
-            {detailedCharacter.name}
+          <div className={styles.nameContainer}>
+            <h1>{detailedCharacter.name}</h1>
             <FavoriteButton
               character={detailedCharacter}
               hovered={false}
               isFavorite={isFavorite(detailedCharacter.id)}
               className={styles.favoriteButton}
             />
-          </h1>
+          </div>
           <p className={styles.description}>{detailedCharacter.description}</p>
         </div>
       </div>
