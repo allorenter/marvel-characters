@@ -15,7 +15,7 @@ export default function FavoritesLength() {
     if (favoriteCharacters) {
       setFavorites(favoriteCharacters);
     }
-  }, [favoriteCharacters]);
+  }, [favoriteCharacters, setFavorites]);
 
   return (
     <ApiRequestStateHandler

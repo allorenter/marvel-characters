@@ -14,7 +14,7 @@ const Wrapper = ({ children, setFavorites }) => {
 
   useEffect(() => {
     if (typeof setFavorites === 'function') setFavorites(favoritesList);
-  }, [favoritesList]);
+  }, [favoritesList, setFavorites]);
 
   return (
     <FavoritesCharactersContext.Provider value={[favoritesList, setFavoritesList]}>
