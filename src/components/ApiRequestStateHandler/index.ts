@@ -1,3 +1,4 @@
 import ApiRequestStateHandler from './ApiRequestStateHandler';
+import { DefaultError } from './components/DefaultError';
 
-export { ApiRequestStateHandler };
+export { ApiRequestStateHandler, DefaultError };

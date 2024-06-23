@@ -5,6 +5,8 @@ import { ApiRequestStateHandler } from '@/components/ApiRequestStateHandler';
 import { Details } from './components/Details';
 import { Comics } from './components/Comics';
 import { ProgressBar } from '@/components/ProgressBar';
+import { DefaultError } from '@/components/ApiRequestStateHandler';
+import { NotFoundError } from './components/NotFoundError';
 
 export default function CharactersDetails() {
   const { id } = useParams();
@@ -13,7 +15,6 @@ export default function CharactersDetails() {
 
   const hasComics = detailedCharacter?.comics?.length > 0;
 
-  // TODO: gestionar notfound errors
   return (
     <Layout>
       <ApiRequestStateHandler
@@ -21,6 +22,10 @@ export default function CharactersDetails() {
         error={errorDetailedCharacter}
         onIsLoadingRender={() => {
           return <ProgressBar />;
+        }}
+        onErrorRender={(error) => {
+          if (error.message === '404') return <NotFoundError />;
+          return <DefaultError />;
         }}
       >
         {detailedCharacter ? (

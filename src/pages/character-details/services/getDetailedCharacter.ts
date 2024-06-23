@@ -11,13 +11,33 @@ export default async function getDetailedCharacter(id: string) {
   });
   const urlCharacter = `${MARVEL_API_BASE_URL}/characters/${id}?${characterReqParams.toString()}`;
   const urlComics = `${MARVEL_API_BASE_URL}/characters/${id}/comics?${comicsReqParams.toString()}`;
-  const [characterResponse, comicsResponse] = await Promise.all([
+
+  const [characterResult, comicsResult] = await Promise.allSettled([
     fetch(urlCharacter, { method: 'GET' }),
     fetch(urlComics, { method: 'GET' }),
   ]);
+
+  if (characterResult.status === 'rejected') {
+    throw new Error('Failed to fetch character data');
+  }
+
+  if (comicsResult.status === 'rejected') {
+    throw new Error('Failed to fetch comics data');
+  }
+
+  const characterResponse = characterResult.value;
+  const comicsResponse = comicsResult.value;
+
+  if (characterResponse.status !== 200 || comicsResponse.status !== 200) {
+    throw new Error(characterResponse.status.toString());
+  }
+
+  console.log('characterResponse comicsResponse', comicsResponse, characterResponse);
+
   const [characterData, comicsData] = await Promise.all([
     characterResponse.json(),
     comicsResponse.json(),
   ]);
+
   return createAdaptedDetailedCharacter(characterData, comicsData);
 }

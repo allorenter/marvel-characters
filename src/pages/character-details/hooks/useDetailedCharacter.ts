@@ -11,6 +11,9 @@ export default function useDetailedCharacter({ id }: { id: string }) {
   } = useQuery({
     queryKey: [USE_DETAILED_CHARACTER_KEY, id],
     queryFn: () => getDetailedCharacter(id),
+    retry: (failureCount, error) => {
+      return error.message === '404' ? false : true;
+    },
   });
 
   return {
