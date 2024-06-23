@@ -7,7 +7,7 @@ export default async function getCharacters(query?: string) {
     apikey: MARVEL_API_PUBLIC_KEY,
     limit: '50',
   });
-  if (query.length > 2) {
+  if (query.length > 0) {
     params.set('nameStartsWith', query);
   }
   const url = `${MARVEL_API_BASE_URL}/characters?${params.toString()}`;
