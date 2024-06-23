@@ -22,17 +22,21 @@ describe('Characters tests', () => {
   });
 
   test('should initially render 50 elements', async () => {
-    const element = await waitFor(() => screen.getByText('50 RESULTS'));
+    const results = await waitFor(() => screen.getByText('50 RESULTS'));
+    const character = await waitFor(() => screen.getByText('3-D Man'));
 
-    expect(element).toBeDefined();
+    expect(results).toBeDefined();
+    expect(character).toBeDefined();
   });
 
   test('should render 2 elements after the search', async () => {
-    const input = screen.getByRole('searchbox') as HTMLInputElement;
+    const input = screen.getByRole('searchbox');
     fireEvent.change(input, { target: { value: 'adam' } });
 
-    const element = await waitFor(() => screen.getByText('2 RESULTS'));
+    const results = await waitFor(() => screen.getByText('2 RESULTS'));
+    const character = await waitFor(() => screen.getByText('Adam Warlock'));
 
-    -expect(element).toBeDefined();
+    expect(results).toBeDefined();
+    expect(character).toBeDefined();
   });
 });
