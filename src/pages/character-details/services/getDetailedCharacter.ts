@@ -32,8 +32,6 @@ export default async function getDetailedCharacter(id: string) {
     throw new Error(characterResponse.status.toString());
   }
 
-  console.log('characterResponse comicsResponse', comicsResponse, characterResponse);
-
   const [characterData, comicsData] = await Promise.all([
     characterResponse.json(),
     comicsResponse.json(),
