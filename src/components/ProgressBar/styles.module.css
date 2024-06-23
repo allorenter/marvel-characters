@@ -6,7 +6,7 @@
 .progressBar {
   height: 5.4px;
   width: 0;
-  background-color: var(--color-red);
+  background-color: var(--color-primary);
   text-align: center;
   transition: width 0.5s ease-in-out;
 }

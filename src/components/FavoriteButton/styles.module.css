@@ -24,7 +24,7 @@
 
 .heartIcon {
   transition: ease-in-out 300ms;
-  fill: var(--color-red);
+  fill: var(--color-primary);
 }
 
 .heartIconHovered {

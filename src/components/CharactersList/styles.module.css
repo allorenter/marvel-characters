@@ -27,11 +27,11 @@
 }
 
 .info {
-  border-top: 5.4px solid var(--color-red);
+  border-top: 5.4px solid var(--color-primary);
   background: linear-gradient(
     to bottom,
-    var(--color-red) 0%,
-    var(--color-red) 50%,
+    var(--color-primary) 0%,
+    var(--color-primary) 50%,
     var(--color-black) 50%,
     var(--color-black) 100%
   );

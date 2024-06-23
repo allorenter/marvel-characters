@@ -33,7 +33,7 @@
 }
 
 .comicsList::-webkit-scrollbar-thumb {
-  background-color: var(--color-red);
+  background-color: var(--color-primary);
 }
 
 .comic {
