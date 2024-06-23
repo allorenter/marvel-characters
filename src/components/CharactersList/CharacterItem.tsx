@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { Character } from '@/types/character';
 import { useState } from 'react';
 import { FavoriteButton } from '@/components/FavoriteButton';
+import useDeviceDetection from '@/hooks/useDeviceDetection';
 
 export default function CharacterItem({
   character,
@@ -11,14 +12,15 @@ export default function CharacterItem({
   character: Character;
   isFavorite: boolean;
 }) {
+  const device = useDeviceDetection();
   const [hovered, setHovered] = useState(false);
 
   const onMouseEnter = () => {
-    setHovered(true);
+    if (device === 'Desktop') setHovered(true);
   };
 
   const onMouseLeave = () => {
-    setHovered(false);
+    if (device === 'Desktop') setHovered(false);
   };
 
   const to = `/character-details/${character.id}`;
@@ -30,7 +32,6 @@ export default function CharacterItem({
           <img className={styles.image} src={character.thumbnail} alt={'Character image'} />
           <div className={styles.info}>
             <div className={styles.name}>{character.name}</div>
-            <div className={styles.fav}>{}</div>
           </div>
         </div>
       </Link>
