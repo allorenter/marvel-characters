@@ -1,4 +1,4 @@
-# marvel-character
+# marvel-characters
 
 https://marvel-characters-production.up.railway.app
 
@@ -21,3 +21,7 @@ Los archivos que pueden ser invocados desde varias de estas rutas, son definidos
 Para el testing he decidido usar React Testing Library cambiando su test runner por defecto de Jest a Vitest.
 
 Los test que he realizado los he hecho para testear funcionalidades básicas, he dejado algunos ejemplos testeando tanto hooks como componentes.
+
+He habiliado dos dominios para aceptar las llamadas usando mi API key: 
+localhost
+marvel-characters-production.up.railway.app
