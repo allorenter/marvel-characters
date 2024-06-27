@@ -1,5 +1,6 @@
 import { CharactersAPIResponse, ComicsAPIResponse } from '@/types/characters-api';
 import { DetailedCharacter } from '../types/detailed-character';
+import { getSecureUrl } from '@/utils';
 
 export default function createAdaptedDetailedCharacter(
   characterResponse: CharactersAPIResponse,
@@ -13,7 +14,7 @@ export default function createAdaptedDetailedCharacter(
     return {
       id,
       title,
-      thumbnail: `${thumbnail.path}.${thumbnail.extension}`,
+      thumbnail: getSecureUrl(`${thumbnail.path}.${thumbnail.extension}`),
       year: Number(year),
     };
   });
@@ -22,7 +23,7 @@ export default function createAdaptedDetailedCharacter(
     return {
       id,
       name,
-      thumbnail: thumbnailSrc,
+      thumbnail: getSecureUrl(thumbnailSrc),
       description,
       comics,
     };

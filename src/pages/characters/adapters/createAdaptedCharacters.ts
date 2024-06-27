@@ -1,5 +1,6 @@
 import { Character } from '@/types/character';
 import { CharactersAPIResponse } from '@/types/characters-api';
+import { getSecureUrl } from '@/utils';
 
 export default function createAdaptedCharacter(
   charactersResponse: CharactersAPIResponse,
@@ -12,7 +13,7 @@ export default function createAdaptedCharacter(
     return {
       id,
       name,
-      thumbnail: thumbnailSrc,
+      thumbnail: getSecureUrl(thumbnailSrc),
     };
   });
 }
